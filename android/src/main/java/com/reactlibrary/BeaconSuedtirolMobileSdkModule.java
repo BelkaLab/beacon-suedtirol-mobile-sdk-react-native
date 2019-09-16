@@ -10,6 +10,7 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.Arguments;
 
 import it.bz.beacon.beaconsuedtirolsdk.NearbyBeaconManager;
 import it.bz.beacon.beaconsuedtirolsdk.exception.MissingLocationPermissionException;
