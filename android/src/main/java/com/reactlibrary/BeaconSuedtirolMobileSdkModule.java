@@ -17,7 +17,7 @@ import it.bz.beacon.beaconsuedtirolsdk.exception.NoBluetoothException;
 import it.bz.beacon.beaconsuedtirolsdk.listener.IBeaconListener;
 import it.bz.beacon.beaconsuedtirolsdk.result.IBeacon;
 
-public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule {
+public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule implements IBeaconListener {
 
     private final ReactApplicationContext reactContext;
     private final NearbyBeaconManager beaconManager;
