@@ -1,9 +1,9 @@
-#import "BeaconSuedtirolMobileSdkReactNative.h"
+#import "BeaconSuedtirolMobileSdk.h"
 
 
-@implementation BeaconSuedtirolMobileSdkReactNative
+@implementation BeaconSuedtirolMobileSdk
 
-RCT_EXPORT_MODULE()
+RCT_EXPORT_MODULE(NearbyBeacons)
 
 RCT_EXPORT_METHOD(sampleMethod:(NSString *)stringArgument numberParameter:(nonnull NSNumber *)numberArgument callback:(RCTResponseSenderBlock)callback)
 {

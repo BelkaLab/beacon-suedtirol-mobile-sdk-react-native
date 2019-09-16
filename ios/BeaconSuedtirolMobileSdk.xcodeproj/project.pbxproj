@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3E7B58A1CC2AC0600A0062D /* BeaconSuedtirolMobileSdkReactNative.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* BeaconSuedtirolMobileSdkReactNative.m */; };
+		B3E7B58A1CC2AC0600A0062D /* BeaconSuedtirolMobileSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* BeaconSuedtirolMobileSdk.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,9 +23,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libBeaconSuedtirolMobileSdkReactNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBeaconSuedtirolMobileSdkReactNative.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5881CC2AC0600A0062D /* BeaconSuedtirolMobileSdkReactNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconSuedtirolMobileSdkReactNative.h; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* BeaconSuedtirolMobileSdkReactNative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconSuedtirolMobileSdkReactNative.m; sourceTree = "<group>"; };
+		134814201AA4EA6300B7C361 /* libBeaconSuedtirolMobileSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBeaconSuedtirolMobileSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3E7B5881CC2AC0600A0062D /* BeaconSuedtirolMobileSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconSuedtirolMobileSdk.h; sourceTree = "<group>"; };
+		B3E7B5891CC2AC0600A0062D /* BeaconSuedtirolMobileSdk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconSuedtirolMobileSdk.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +42,7 @@
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				134814201AA4EA6300B7C361 /* libBeaconSuedtirolMobileSdkReactNative.a */,
+				134814201AA4EA6300B7C361 /* libBeaconSuedtirolMobileSdk.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -50,8 +50,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E7B5881CC2AC0600A0062D /* BeaconSuedtirolMobileSdkReactNative.h */,
-				B3E7B5891CC2AC0600A0062D /* BeaconSuedtirolMobileSdkReactNative.m */,
+				B3E7B5881CC2AC0600A0062D /* BeaconSuedtirolMobileSdk.h */,
+				B3E7B5891CC2AC0600A0062D /* BeaconSuedtirolMobileSdk.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,9 +59,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58B511DA1A9E6C8500147676 /* BeaconSuedtirolMobileSdkReactNative */ = {
+		58B511DA1A9E6C8500147676 /* BeaconSuedtirolMobileSdk */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "BeaconSuedtirolMobileSdkReactNative" */;
+			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "BeaconSuedtirolMobileSdk" */;
 			buildPhases = (
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
@@ -71,9 +71,9 @@
 			);
 			dependencies = (
 			);
-			name = BeaconSuedtirolMobileSdkReactNative;
+			name = BeaconSuedtirolMobileSdk;
 			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libBeaconSuedtirolMobileSdkReactNative.a */;
+			productReference = 134814201AA4EA6300B7C361 /* libBeaconSuedtirolMobileSdk.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -90,7 +90,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "BeaconSuedtirolMobileSdkReactNative" */;
+			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "BeaconSuedtirolMobileSdk" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -102,7 +102,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58B511DA1A9E6C8500147676 /* BeaconSuedtirolMobileSdkReactNative */,
+				58B511DA1A9E6C8500147676 /* BeaconSuedtirolMobileSdk */,
 			);
 		};
 /* End PBXProject section */
@@ -112,7 +112,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* BeaconSuedtirolMobileSdkReactNative.m in Sources */,
+				B3E7B58A1CC2AC0600A0062D /* BeaconSuedtirolMobileSdk.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +223,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = BeaconSuedtirolMobileSdkReactNative;
+				PRODUCT_NAME = BeaconSuedtirolMobileSdk;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -239,7 +239,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = BeaconSuedtirolMobileSdkReactNative;
+				PRODUCT_NAME = BeaconSuedtirolMobileSdk;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -247,7 +247,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "BeaconSuedtirolMobileSdkReactNative" */ = {
+		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "BeaconSuedtirolMobileSdk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511ED1A9E6C8500147676 /* Debug */,
@@ -256,7 +256,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "BeaconSuedtirolMobileSdkReactNative" */ = {
+		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "BeaconSuedtirolMobileSdk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511F01A9E6C8500147676 /* Debug */,

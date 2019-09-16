@@ -1,6 +1,6 @@
 {
-  "name": "react-native-beacon-suedtirol-mobile-sdk-react-native",
-  "title": "React Native Beacon Suedtirol Mobile Sdk React Native",
+  "name": "react-native-beacon-suedtirol-mobile-sdk",
+  "title": "React Native Beacon Suedtirol Mobile Sdk",
   "version": "1.0.0",
   "description": "TODO",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-beacon-suedtirol-mobile-sdk-react-native.git",
-    "baseUrl": "https://github.com/github_account/react-native-beacon-suedtirol-mobile-sdk-react-native"
+    "url": "git+https://github.com/BelkaLab/react-native-beacon-suedtirol-mobile-sdk.git",
+    "baseUrl": "https://github.com/BelkaLab/react-native-beacon-suedtirol-mobile-sdk"
   },
   "keywords": [
     "react-native"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
+    "name": "Fabrizio Rizzonelli",
+    "email": "fabrizio.rizzonelli@gmail.com"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",

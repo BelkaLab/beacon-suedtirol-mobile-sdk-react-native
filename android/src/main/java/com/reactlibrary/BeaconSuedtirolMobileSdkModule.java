@@ -5,18 +5,18 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
 
-public class BeaconSuedtirolMobileSdkReactNativeModule extends ReactContextBaseJavaModule {
+public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule {
 
     private final ReactApplicationContext reactContext;
 
-    public BeaconSuedtirolMobileSdkReactNativeModule(ReactApplicationContext reactContext) {
+    public BeaconSuedtirolMobileSdkModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
     }
 
     @Override
     public String getName() {
-        return "BeaconSuedtirolMobileSdkReactNative";
+        return "NearbyBeacons";
     }
 
     @ReactMethod

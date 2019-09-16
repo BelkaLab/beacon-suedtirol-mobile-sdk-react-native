@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:BeaconSuedtirolMobileSdkReactNative.xcodeproj">
+      location = "group:BeaconSuedtirolMobileSdk.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,5 +1,5 @@
 import { NativeModules } from 'react-native';
 
-const { BeaconSuedtirolMobileSdkReactNative } = NativeModules;
+const { BeaconSuedtirolMobileSdk } = NativeModules;
 
-export default BeaconSuedtirolMobileSdkReactNative;
+export default BeaconSuedtirolMobileSdk;
