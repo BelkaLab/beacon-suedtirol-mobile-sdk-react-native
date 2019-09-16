@@ -25,6 +25,8 @@ public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule {
     public BeaconSuedtirolMobileSdkModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
+        this.beaconManager = NearbyBeaconManager.getInstance();
+        this.beaconManager.setIBeaconListener(this);
     }
 
     @Override
@@ -41,7 +43,7 @@ public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void startScanning(Callback callback) {
         try {
-            NearbyBeaconManager.getInstance().startScanning();
+            beaconManager.startScanning();
             callback.invoke("Scan started");
         } catch (NoBluetoothException e) {
             e.printStackTrace();
@@ -52,19 +54,16 @@ public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void stopScanning(Callback callback) {
-        try {
-            NearbyBeaconManager.getInstance().stopScanning();
-            callback.invoke("Scan stopped");
-        } catch (NoBluetoothException e) {
-            e.printStackTrace();
-        } catch (MissingLocationPermissionException e) {
-            e.printStackTrace();
-        }
+        beaconManager.stopScanning();
+        callback.invoke("Scan stopped");
     }
 
     @Override
     public void onIBeaconDiscovered(IBeacon iBeacon) {
         WritableMap beaconMap = Arguments.createMap();
+        beaconMap.putString("id", iBeacon.getInfo().getId());
+        beaconMap.putDouble("latitude", iBeacon.getInfo().getLatitude());
+        beaconMap.putDouble("longitude", iBeacon.getInfo().getLongitude());
         sendEvent(this.reactContext, "beaconDiscovered", beaconMap);
     }
 
