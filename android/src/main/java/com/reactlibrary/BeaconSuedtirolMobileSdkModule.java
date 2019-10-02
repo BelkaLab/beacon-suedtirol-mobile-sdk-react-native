@@ -70,7 +70,9 @@ public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule i
 
     @Override
     public void onIBeaconLost(IBeacon iBeacon) {
-
+        WritableMap beaconMap = Arguments.createMap();
+        beaconMap.putString("id", iBeacon.getInfo().getId());
+        sendEvent(this.reactContext, "beaconLost", beaconMap);
     }
 
     private void sendEvent(ReactContext reactContext, String eventName, @Nullable WritableMap params) {
