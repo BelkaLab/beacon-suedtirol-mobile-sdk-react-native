@@ -54,9 +54,19 @@ public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule i
     }
 
     @ReactMethod
+    public void isScanning() {
+        return beaconManager.isScanning();
+    }
+
+    @ReactMethod
     public void stopScanning(Callback callback) {
         beaconManager.stopScanning();
         callback.invoke("Scan stopped");
+    }
+
+    @ReactMethod
+    public void configureScanMode(int bluetoothMode) {
+        beaconManager.configureScanMode(BluetoothMode.low_latency);
     }
 
     @Override
