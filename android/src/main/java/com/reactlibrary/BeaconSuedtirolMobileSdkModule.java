@@ -13,6 +13,7 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.Arguments;
 
 import it.bz.beacon.beaconsuedtirolsdk.NearbyBeaconManager;
+import it.bz.beacon.beaconsuedtirolsdk.configuration.BluetoothMode;
 import it.bz.beacon.beaconsuedtirolsdk.exception.MissingLocationPermissionException;
 import it.bz.beacon.beaconsuedtirolsdk.exception.NoBluetoothException;
 import it.bz.beacon.beaconsuedtirolsdk.listener.IBeaconListener;
@@ -54,7 +55,7 @@ public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule i
     }
 
     @ReactMethod
-    public void isScanning() {
+    public boolean isScanning() {
         return beaconManager.isScanning();
     }
 
