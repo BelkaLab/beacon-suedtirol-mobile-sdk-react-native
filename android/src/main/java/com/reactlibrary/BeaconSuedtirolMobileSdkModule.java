@@ -1,17 +1,15 @@
 package com.reactlibrary;
 
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.ReactContext;
-import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import androidx.annotation.Nullable;
-
-import com.facebook.react.bridge.WritableMap;
-import com.facebook.react.bridge.Arguments;
-
 import it.bz.beacon.beaconsuedtirolsdk.NearbyBeaconManager;
 import it.bz.beacon.beaconsuedtirolsdk.configuration.BluetoothMode;
 import it.bz.beacon.beaconsuedtirolsdk.exception.MissingLocationPermissionException;
@@ -66,13 +64,47 @@ public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule i
     }
 
     @ReactMethod
-    public void configureScanMode(int bluetoothMode) {
-        beaconManager.configureScanMode(BluetoothMode.low_latency);
+    public void configureScanMode(int bluetoohMode) {
+        beaconManager.configureScanMode(BTMode.getBTMode(bluetoohMode));
     }
+
+    private enum BTMode {
+        low_power(0),
+        balanced(1),
+        low_latency(2);
+
+        private final int value;
+
+        BTMode(int value) {
+            this.value = value;
+        }
+
+        public static BTMode valueOf(int value) {
+            for (BTMode bt : BTMode.values()) {
+                if (bt.value == value) return bt;
+            }
+            throw new IllegalArgumentException("BTMode not supported");
+        }
+
+        public static BluetoothMode getBTMode(int btMode) {
+            switch (valueOf(btMode)) {
+                case low_power:
+                    return BluetoothMode.low_power;
+                case balanced:
+                default:
+                    return BluetoothMode.balanced;
+                case low_latency:
+                    return BluetoothMode.low_latency;
+            }
+        }
+    };
 
     @Override
     public void onIBeaconDiscovered(IBeacon iBeacon) {
         WritableMap beaconMap = Arguments.createMap();
+        if (iBeacon.getInfo() == null) {
+            return;
+        }
         beaconMap.putString("id", iBeacon.getInfo().getId());
         beaconMap.putDouble("latitude", iBeacon.getInfo().getLatitude());
         beaconMap.putDouble("longitude", iBeacon.getInfo().getLongitude());
