@@ -12,6 +12,7 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 import androidx.annotation.Nullable;
 import it.bz.beacon.beaconsuedtirolsdk.NearbyBeaconManager;
 import it.bz.beacon.beaconsuedtirolsdk.configuration.BluetoothMode;
+import it.bz.beacon.beaconsuedtirolsdk.configuration.RangeDistance;
 import it.bz.beacon.beaconsuedtirolsdk.exception.MissingLocationPermissionException;
 import it.bz.beacon.beaconsuedtirolsdk.exception.NoBluetoothException;
 import it.bz.beacon.beaconsuedtirolsdk.listener.IBeaconListener;
@@ -121,7 +122,22 @@ public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule i
         beaconMap.putDouble("latitude", iBeacon.getInfo().getLatitude());
         beaconMap.putDouble("longitude", iBeacon.getInfo().getLongitude());
         beaconMap.putDouble("distance", distance);
+        beaconMap.putString("range", valueOf(rangeDistance));
         sendEvent(this.reactContext, "beaconDiscovered", beaconMap);
+    }
+
+    private String valueOf(RangeDistance rangeDistance) {
+        switch (rangeDistance) {
+            case immediate:
+                return "immediate";
+            case near:
+                return "near";
+            case far:
+                return "far";
+            case unknown:
+            default:
+                return "unknown";
+        }
     }
 
     @Override
