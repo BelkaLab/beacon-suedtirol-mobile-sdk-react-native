@@ -112,6 +112,19 @@ public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule i
     }
 
     @Override
+    public void onIBeaconDiscovered(IBeacon iBeacon, double distance, RangeDistance rangeDistance) {
+        WritableMap beaconMap = Arguments.createMap();
+        if (iBeacon.getInfo() == null) {
+            return;
+        }
+        beaconMap.putString("id", iBeacon.getInfo().getId());
+        beaconMap.putDouble("latitude", iBeacon.getInfo().getLatitude());
+        beaconMap.putDouble("longitude", iBeacon.getInfo().getLongitude());
+        beaconMap.putDouble("distance", distance);
+        sendEvent(this.reactContext, "beaconDiscovered", beaconMap);
+    }
+
+    @Override
     public void onIBeaconLost(IBeacon iBeacon) {
         WritableMap beaconMap = Arguments.createMap();
         beaconMap.putString("id", iBeacon.getInfo().getId());
