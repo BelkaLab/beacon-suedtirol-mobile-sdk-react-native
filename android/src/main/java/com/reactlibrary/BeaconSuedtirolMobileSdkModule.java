@@ -7,7 +7,10 @@ import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
+
+import java.util.List;
 
 import androidx.annotation.Nullable;
 import it.bz.beacon.beaconsuedtirolsdk.NearbyBeaconManager;
@@ -17,6 +20,7 @@ import it.bz.beacon.beaconsuedtirolsdk.exception.MissingLocationPermissionExcept
 import it.bz.beacon.beaconsuedtirolsdk.exception.NoBluetoothException;
 import it.bz.beacon.beaconsuedtirolsdk.listener.IBeaconListener;
 import it.bz.beacon.beaconsuedtirolsdk.result.IBeacon;
+import it.bz.beacon.beaconsuedtirolsdk.result.IBeaconExtended;
 
 public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule implements IBeaconListener {
 
@@ -113,7 +117,7 @@ public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule i
     }
 
     @Override
-    public void onIBeaconDiscovered(IBeacon iBeacon, double distance, RangeDistance rangeDistance) {
+    public void onIBeaconDiscovered(IBeaconExtended iBeacon) {
         WritableMap beaconMap = Arguments.createMap();
         if (iBeacon.getInfo() == null) {
             return;
@@ -121,9 +125,29 @@ public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule i
         beaconMap.putString("id", iBeacon.getInfo().getId());
         beaconMap.putDouble("latitude", iBeacon.getInfo().getLatitude());
         beaconMap.putDouble("longitude", iBeacon.getInfo().getLongitude());
-        beaconMap.putDouble("distance", distance);
-        beaconMap.putString("range", valueOf(rangeDistance));
+        beaconMap.putDouble("distance", iBeacon.getDistance());
+        beaconMap.putString("range", valueOf(iBeacon.getRangeDistance()));
         sendEvent(this.reactContext, "beaconDiscovered", beaconMap);
+    }
+
+    @Override
+    public void onIBeaconUpdated(List<IBeaconExtended> iBeacons) {
+        WritableArray array = Arguments.createArray();
+        for (IBeaconExtended b : iBeacons) {
+            WritableMap beaconMap = Arguments.createMap();
+            if (b.getInfo() == null) {
+                return;
+            }
+            beaconMap.putString("id", b.getInfo().getId());
+            beaconMap.putDouble("latitude", b.getInfo().getLatitude());
+            beaconMap.putDouble("longitude", b.getInfo().getLongitude());
+            beaconMap.putDouble("distance", b.getDistance());
+            beaconMap.putString("range", valueOf(b.getRangeDistance()));
+            array.pushMap(beaconMap);
+        }
+        WritableMap beaconsMap = Arguments.createMap();
+        beaconsMap.putArray("beacons", array);
+        sendEvent(this.reactContext, "beaconsUpdated", beaconsMap);
     }
 
     private String valueOf(RangeDistance rangeDistance) {
