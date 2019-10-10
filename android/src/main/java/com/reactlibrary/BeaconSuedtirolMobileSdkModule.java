@@ -73,6 +73,11 @@ public class BeaconSuedtirolMobileSdkModule extends ReactContextBaseJavaModule i
         beaconManager.configureScanMode(BTMode.getBTMode(bluetoohMode));
     }
 
+    @ReactMethod
+    public void setDeviceUpdateCallbackInterval(int seconds) {
+        beaconManager.setDeviceupdateCallbackInterval(seconds);
+    }
+
     private enum BTMode {
         low_power(0),
         balanced(1),
