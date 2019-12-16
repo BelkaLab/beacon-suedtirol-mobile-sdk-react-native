@@ -55,7 +55,7 @@ repositories {
 dependencies {
     implementation "com.facebook.react:react-native:${safeExtGet('reactnativeVersion', '+')}"
     // implementation "com.github.noi-techpark:beacon-suedtirol-mobile-sdk-android:0.2.8"
-    implementation "it.bz.beacon:sdk:0.2.10-SNAPSHOT"
+    implementation "it.bz.beacon:sdk:0.3.1-SNAPSHOT"
     implementation "com.kontaktio:sdk:4.0.3"
 }
 
