@@ -47,15 +47,14 @@ repositories {
         // https://github.com/facebook/react-native/blob/0.59-stable/template/android/build.gradle#L30
         // https://github.com/facebook/react-native/blob/0.60-stable/template/android/build.gradle#L28
         url "$projectDir/../node_modules/react-native/android"
-        url "http://it.bz.opendatahub.s3-website-eu-west-1.amazonaws.com/snapshot"
+        url "http://it.bz.opendatahub.s3-website-eu-west-1.amazonaws.com/release"
     }
     mavenCentral()
 }
 
 dependencies {
     implementation "com.facebook.react:react-native:${safeExtGet('reactnativeVersion', '+')}"
-    // implementation "com.github.noi-techpark:beacon-suedtirol-mobile-sdk-android:0.2.8"
-    implementation "it.bz.beacon:sdk:0.3.1-SNAPSHOT"
+    implementation "it.bz.beacon:sdk:0.4.2"
     implementation "com.kontaktio:sdk:4.0.3"
 }
 
